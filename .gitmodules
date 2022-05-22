@@ -1,0 +1,3 @@
+[submodule "voicevox_core"]
+	path = voicevox_core
+	url = https://github.com/VOICEVOX/voicevox_core.git
