@@ -14,6 +14,7 @@
    limitations under the License.
 """
 
+import argparse
 import sys
 import json
 import queue
@@ -27,6 +28,14 @@ import numpy as np
 import resampy
 
 import core as vvcore
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--input", type=int, help="audio input device ID (See python -m sounddevice for a list of devices)")
+parser.add_argument("--output", type=int, help="audio output device ID (See python -m sounddevice for a list of devices)")
+args = parser.parse_args()
+
+sounddevice.default.device = (args.input, args.output)
 
 MODEL_PATH = "./resource/vosk-model-small-ja-0.22"
 DICT_PATH = "./resource/open_jtalk_dic_utf_8-1.11"
